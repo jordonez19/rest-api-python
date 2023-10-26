@@ -1,0 +1,41 @@
+$ pip install virtualenv
+$ python -m venv venv
+$ pip install django
+$ django-admin
+$ Escoger un nombre importante:
+    django-admin startproject django_crud_api .
+
+# colocando rest framework para api  
+$ pip install djangorestframework
+
+
+pip install django-cors-headers
+
+
+settings carpeta principal 
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'corsheaders', <------
+    'rest_framework', <------
+    'tasks' <------
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware"
+    'django.middleware.common.CommonMiddleware',   <------
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+#Quien se puede comunicar con nuestro servidor
+CORS_ALLOWED_ORIGINS = []
